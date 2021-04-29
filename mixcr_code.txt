@@ -1,0 +1,6 @@
+# Example of the commands used for MiXCR
+mixcr align -r M5_human_paired.report -s hsa -OsaveOriginalReads=true M5_S2_L001_R1_001.fastq M5_S2_L001_R2_001.fastq M5_human_paired.vdjca -f
+mixcr assemble --write-alignments M5_human_paired.vdjca M5_human_paired.clna -f
+mixcr assembleContigs M5_human_paired.clna M5_human_paired.clns -f
+mixcr exportClones -cloneId -targets -f -p fullImputed -topChains M5_human_paired.clns M5_human_paired_clones.txt 
+mixcr exportAlignments -f -descrsR2 -descrsR1 -cloneId -readIds -targetSequences -topChains -chains -cloneIdWithMappingType M5_human_paired.clna M5_human_paired_cloneID.txt 
